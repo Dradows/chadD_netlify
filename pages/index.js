@@ -53,7 +53,7 @@ export default function Home() {
                 prompt: prompt,
               })
             );
-            const text = await fetch('/api/chatgpt', {
+            const text = await fetch('https://chat2me.top/api/chatgpt', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',
@@ -110,7 +110,7 @@ export default function Home() {
             textAreaRef.current.focus({
               cursor: 'start',
             });
-            fetch('/api/check', {
+            fetch('https://chat2me.top/api/check', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',
