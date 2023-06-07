@@ -53,7 +53,14 @@ export default function Home() {
                 prompt: prompt,
               })
             );
-            const text = await fetch('https://chat2me.top/api/chatgpt', {
+            const hello = await fetch('https://www.chat2me.top/api/hello', {
+              method: 'GET',
+            }).catch(e => {
+              console.log(e);
+              return { errorMessage: 'error' };
+            });
+            console.log(hello);
+            const text = await fetch('https://www.chat2me.top/api/chatgpt', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',
@@ -110,7 +117,7 @@ export default function Home() {
             textAreaRef.current.focus({
               cursor: 'start',
             });
-            fetch('https://chat2me.top/api/check', {
+            fetch('https://www.chat2me.top/api/check', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',
@@ -176,7 +183,7 @@ export default function Home() {
           form={feedback}
           onFinish={e => {
             console.log(e);
-            fetch('/api/feedback', {
+            fetch('https://www.chat2me.top/api/feedback', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',
