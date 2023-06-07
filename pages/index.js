@@ -53,14 +53,14 @@ export default function Home() {
                 prompt: prompt,
               })
             );
-            const hello = await fetch('https://chatd-production.up.railway.app/api/hello', {
-              method: 'GET',
-            }).catch(e => {
-              console.log(e);
-              return { errorMessage: 'error' };
-            });
-            console.log(hello);
-            const text = await fetch('https://chatd-production.up.railway.app/api/chatgpt', {
+            // const hello = await fetch('https://chatd-production.up.railway.app/api/hello', {
+            //   method: 'GET',
+            // }).catch(e => {
+            //   console.log(e);
+            //   return { errorMessage: 'error' };
+            // });
+            // console.log(hello);
+            const text = await fetch('api/chatgpt', {
               method: 'POST',
               body: JSON.stringify({
                 prompt: prompt,
