@@ -53,14 +53,14 @@ export default function Home() {
                 prompt: prompt,
               })
             );
-            const hello = await fetch('https://www.chat2me.top/api/hello', {
+            const hello = await fetch('https://chatd-production.up.railway.app/api/hello', {
               method: 'GET',
             }).catch(e => {
               console.log(e);
               return { errorMessage: 'error' };
             });
             console.log(hello);
-            const text = await fetch('https://www.chat2me.top/api/chatgpt', {
+            const text = await fetch('https://chatd-production.up.railway.app/api/chatgpt', {
               method: 'POST',
               body: JSON.stringify({
                 prompt: prompt,
@@ -114,7 +114,7 @@ export default function Home() {
             textAreaRef.current.focus({
               cursor: 'start',
             });
-            fetch('https://www.chat2me.top/api/check', {
+            fetch('https://chatd-production.up.railway.app/api/check', {
               method: 'POST',
               body: JSON.stringify({
                 prompt: prompt,
@@ -177,7 +177,7 @@ export default function Home() {
           form={feedback}
           onFinish={e => {
             console.log(e);
-            fetch('https://www.chat2me.top/api/feedback', {
+            fetch('https://chatd-production.up.railway.app/api/feedback', {
               method: 'POST',
               body: JSON.stringify({
                 feedback: e.feedback,
