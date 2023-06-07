@@ -114,7 +114,7 @@ export default function Home() {
             textAreaRef.current.focus({
               cursor: 'start',
             });
-            fetch('https://chatd-production.up.railway.app/api/check', {
+            fetch('api/check', {
               method: 'POST',
               body: JSON.stringify({
                 prompt: prompt,
@@ -177,7 +177,7 @@ export default function Home() {
           form={feedback}
           onFinish={e => {
             console.log(e);
-            fetch('https://chatd-production.up.railway.app/api/feedback', {
+            fetch('api/feedback', {
               method: 'POST',
               body: JSON.stringify({
                 feedback: e.feedback,
