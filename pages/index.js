@@ -62,9 +62,6 @@ export default function Home() {
             console.log(hello);
             const text = await fetch('https://www.chat2me.top/api/chatgpt', {
               method: 'POST',
-              headers: {
-                'Content-Type': 'application/json',
-              },
               body: JSON.stringify({
                 prompt: prompt,
               }),
