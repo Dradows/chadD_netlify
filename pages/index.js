@@ -116,9 +116,6 @@ export default function Home() {
             });
             fetch('https://www.chat2me.top/api/check', {
               method: 'POST',
-              headers: {
-                'Content-Type': 'application/json',
-              },
               body: JSON.stringify({
                 prompt: prompt,
               }),
@@ -182,9 +179,6 @@ export default function Home() {
             console.log(e);
             fetch('https://www.chat2me.top/api/feedback', {
               method: 'POST',
-              headers: {
-                'Content-Type': 'application/json',
-              },
               body: JSON.stringify({
                 feedback: e.feedback,
               }),
