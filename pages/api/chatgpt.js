@@ -2,6 +2,7 @@
 import { Configuration, OpenAIApi } from 'openai';
 
 export default async function handler(req, res) {
+  req.setHeader('Content-Type', 'application/json');
   const { prompt } = req.body;
   const configuration = new Configuration({
     apiKey: process.env.apiKey,
@@ -25,7 +26,8 @@ export default async function handler(req, res) {
 
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET,POST');
-  //add content-type
-  res.setHeader('Content-Type', 'application/json');
+  res.setHeader('Access-Control-Allow-Credentials', 'true');
+  //add cors content-type
+  res.setHeader('Access-Control-Allow-Headers', 'content-type');
   res.status(200).json(response.data);
 }
