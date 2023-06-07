@@ -23,5 +23,9 @@ export default async function handler(req, res) {
 
   console.log(`Time taken: ${end - start} ms`);
 
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET,POST');
+  //add content-type
+  res.setHeader('Content-Type', 'application/json');
   res.status(200).json(response.data);
 }
